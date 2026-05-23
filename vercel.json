@@ -7,12 +7,7 @@
 
   "routes": [
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
-    { "src": "/(.*)", "dest": "/api/_worker" }
-  ],
-
-  "functions": {
-    "api/_worker.*": {
-      "runtime": "edge"
-    }
-  }
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
